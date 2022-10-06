@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import DataForm from "./components/DataForm/DataForm";
+import DataList from "./components/DataList/DataList";
+
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const client = new QueryClient();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={client}>
+      <div className="App">
+        <DataForm />
+        <DataList />
+      </div>
+    </QueryClientProvider>
   );
 }
 
