@@ -5,6 +5,7 @@ const Axios = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  baseURL: "https://mern-deploy-file.herokuapp.com/",
 });
 
 export default Axios;
